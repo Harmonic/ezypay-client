@@ -1,0 +1,16 @@
+{
+  "message": "Validation Error",
+  "details": {
+    "message": "Validation Error",
+    "httpCode": 412,
+    "type": null,
+    "error_Id": "ae8714fd-15aa-41d8-88c2-56b5b813c21e",
+    "errors": [
+      {
+        "field": "CustomerId",
+        "reason": null,
+        "message": "invalid value"
+      }
+    ]
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "Customer Resource": {
+    "0": "Customer",
+    "findById": {
+      "method": "GET",
+      "url": "customers",
+      "ID": "33160580-3e25-49f4-b01c-274634cb3011"
+    }
+  },
+  "Invoice Resource": {
+    "0": "Invoice",
+    "findById": {
+      "method": "GET",
+      "url": "invoices",
+      "ID": "2f03dbe8-1349-4535-80f0-32e2146b071d"
+    }
+  },
+  "InvoiceItem Resource": {
+    "0": "InvoiceItem",
+    "findById": []
+  },
+  "Payment Resource": {
+    "0": "Payment",
+    "findById": {
+      "method": "GET",
+      "url": "payments",
+      "ID": "5864880"
+    }
+  },
+  "PaymentMethod Resource": {
+    "0": "PaymentMethod",
+    "findById": {
+      "method": "GET",
+      "url": "paymentmethods",
+      "ID": "20e68ad7-ff54-4cb6-8556-f87f58bcf995"
+    }
+  },
+  "Plan Resource": {
+    "0": "Plan",
+    "findById": {
+      "method": "GET",
+      "url": "plans",
+      "ID": "fffcf9aa-fc2a-49c4-8f77-423ededd346b"
+    }
+  },
+  "Settlement Resource": {
+    "0": "Settlement",
+    "findById": []
+  },
+  "Subscription Resource": {
+    "0": "Subscription",
+    "findById": {
+      "method": "GET",
+      "url": "subscriptions",
+      "ID": "2decdd31-c02e-46fa-93d6-4cf5f4b06708"
+    }
+  }
+}

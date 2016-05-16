@@ -1,0 +1,19 @@
+{
+    "name": "peroperje/ezypay-client",
+    "description": "PHP EzyPay API client",
+    "type": "package",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "peroperje",
+            "email": "el.pionir@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {},
+    "autoload": {
+        "psr-4" : {
+            "Peroperje\\Ezypay" : "src"
+        }
+    }
+}

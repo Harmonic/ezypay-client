@@ -1,0 +1,58 @@
+{
+  "Customer Resource": {
+    "0": "Customer",
+    "findAll": {
+      "method": "GET",
+      "url": "customers",
+      "data": []
+    }
+  },
+  "Invoice Resource": {
+    "0": "Invoice",
+    "findAll": {
+      "method": "GET",
+      "url": "invoices",
+      "data": []
+    }
+  },
+  "InvoiceItem Resource": {
+    "0": "InvoiceItem",
+    "findAll": []
+  },
+  "Payment Resource": {
+    "0": "Payment",
+    "findAll": {
+      "method": "GET",
+      "url": "payments",
+      "data": []
+    }
+  },
+  "PaymentMethod Resource": {
+    "0": "PaymentMethod",
+    "findAll": {
+      "method": "GET",
+      "url": "paymentmethods",
+      "data": []
+    }
+  },
+  "Plan Resource": {
+    "0": "Plan",
+    "findAll": {
+      "method": "GET",
+      "url": "plans",
+      "data": []
+    }
+  },
+  "Settlement Resource": {
+    "0": "Settlement",
+    "findAll": []
+  },
+  "Subscription Resource": {
+    "0": "Subscription",
+    "findAll": {
+      "method": "GET",
+      "url": "subscriptions",
+      "data": []
+    }
+  }
+}

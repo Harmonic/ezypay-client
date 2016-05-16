@@ -1,0 +1,213 @@
+{
+  "totalReturned": 10,
+  "totalRecord": 10,
+  "data": [
+    {
+      "customerId": "cef65f62-ee1a-471d-982e-cb75a5fb5419",
+      "firstName": "BebeName",
+      "surname": "BebeSurname",
+      "email": "bebe2@ptt.yu",
+      "gender": null,
+      "dateOfBirth": null,
+      "companyName": null,
+      "merchantId": "7b9baeac-ede4-4f5c-b4e3-52c51c2db08c",
+      "customerNumber": 90332337,
+      "homePhone": null,
+      "mobilePhone": null,
+      "referenceId": "111222333",
+      "customerStatuses": [
+        "NoSubscription",
+        "NoPaymentMethod"
+      ],
+      "address": null,
+      "createdOn": "2016-04-26T18:58:38.36"
+    },
+    {
+      "customerId": "dd63ba93-1b67-48b1-a100-310c9cd23908",
+      "firstName": "firstName3",
+      "surname": "surname3",
+      "email": "email@hh.com",
+      "gender": null,
+      "dateOfBirth": null,
+      "companyName": null,
+      "merchantId": "7b9baeac-ede4-4f5c-b4e3-52c51c2db08c",
+      "customerNumber": 90332316,
+      "homePhone": null,
+      "mobilePhone": null,
+      "referenceId": null,
+      "customerStatuses": [
+        "NoSubscription",
+        "NoPaymentMethod"
+      ],
+      "address": null,
+      "createdOn": "2016-04-08T13:06:13.047"
+    },
+    {
+      "customerId": "10a56e09-4757-4bb0-babf-c27fe58105c0",
+      "firstName": "John",
+      "surname": "Smith",
+      "email": "john.smith@essential.net.au",
+      "gender": null,
+      "dateOfBirth": null,
+      "companyName": null,
+      "merchantId": "7b9baeac-ede4-4f5c-b4e3-52c51c2db08c",
+      "customerNumber": 90332314,
+      "homePhone": null,
+      "mobilePhone": null,
+      "referenceId": null,
+      "customerStatuses": [
+        "NoSubscription",
+        "NoPaymentMethod"
+      ],
+      "address": {
+        "customerId": "10a56e09-4757-4bb0-babf-c27fe58105c0",
+        "address1": "11 TEST STREET",
+        "address2": null,
+        "postcode": "3777",
+        "state": "VIC",
+        "suburb": "Chum Creek",
+        "townCity": "",
+        "createdOn": "2016-04-01T14:19:14.29"
+      },
+      "createdOn": "2016-04-01T14:18:31.907"
+    },
+    {
+      "customerId": "c61e5b24-4b38-4a4f-b70a-3dfbf46e8fcd",
+      "firstName": "MOhd",
+      "surname": "Mie",
+      "email": "miyaotoki@yahoo.com",
+      "gender": null,
+      "dateOfBirth": null,
+      "companyName": null,
+      "merchantId": "7b9baeac-ede4-4f5c-b4e3-52c51c2db08c",
+      "customerNumber": 90332307,
+      "homePhone": null,
+      "mobilePhone": "",
+      "referenceId": null,
+      "customerStatuses": [
+        "NoSubscription",
+        "NoPaymentMethod"
+      ],
+      "address": null,
+      "createdOn": "2016-03-30T13:21:14.653"
+    },
+    {
+      "customerId": "a1012677-247e-475e-a832-8547735df499",
+      "firstName": "PepeName",
+      "surname": "PepeSurname",
+      "email": "pepe2@ptt.yu",
+      "gender": null,
+      "dateOfBirth": null,
+      "companyName": null,
+      "merchantId": "7b9baeac-ede4-4f5c-b4e3-52c51c2db08c",
+      "customerNumber": 90332351,
+      "homePhone": null,
+      "mobilePhone": null,
+      "referenceId": "114455-85",
+      "customerStatuses": [
+        "NoSubscription",
+        "NoPaymentMethod"
+      ],
+      "address": null,
+      "createdOn": "2016-05-03T17:59:47.347"
+    },
+    {
+      "customerId": "33160580-3e25-49f4-b01c-274634cb3011",
+      "firstName": "Petartest",
+      "surname": "Borovcanintest",
+      "email": "tetst@ptt.yu",
+      "gender": null,
+      "dateOfBirth": null,
+      "companyName": null,
+      "merchantId": "7b9baeac-ede4-4f5c-b4e3-52c51c2db08c",
+      "customerNumber": 90332328,
+      "homePhone": null,
+      "mobilePhone": null,
+      "referenceId": "10101010101010",
+      "customerStatuses": [
+        "OutstandingInvoices"
+      ],
+      "address": null,
+      "createdOn": "2016-04-18T16:45:14.133"
+    },
+    {
+      "customerId": "0ceedeeb-73e4-4ef5-821e-6c754696c47b",
+      "firstName": "SekiraName2",
+      "surname": "SekiraSurname2",
+      "email": "testemail@ptt.yu",
+      "gender": null,
+      "dateOfBirth": null,
+      "companyName": null,
+      "merchantId": "7b9baeac-ede4-4f5c-b4e3-52c51c2db08c",
+      "customerNumber": 90332334,
+      "homePhone": null,
+      "mobilePhone": null,
+      "referenceId": "123456",
+      "customerStatuses": [
+        "NoSubscription",
+        "NoPaymentMethod"
+      ],
+      "address": null,
+      "createdOn": "2016-04-25T16:58:32.017"
+    },
+    {
+      "customerId": "31a9c81a-7b94-43a8-b32e-bc2783350e9c",
+      "firstName": "SomeName",
+      "surname": "SomeSurname",
+      "email": "test444@ptt.yu",
+      "gender": null,
+      "dateOfBirth": null,
+      "companyName": null,
+      "merchantId": "7b9baeac-ede4-4f5c-b4e3-52c51c2db08c",
+      "customerNumber": 90332336,
+      "homePhone": null,
+      "mobilePhone": null,
+      "referenceId": "1122334455667788990",
+      "customerStatuses": [
+        "NoSubscription",
+        "NoPaymentMethod"
+      ],
+      "address": null,
+      "createdOn": "2016-04-25T18:48:49.33"
+    },
+    {
+      "customerId": "c6a234ee-8fb8-4899-b739-b57d24c38ded",
+      "firstName": "TestCustomerName",
+      "surname": "TestCustomemrSurname",
+      "email": "testemail@ptt.yu",
+      "gender": null,
+      "dateOfBirth": null,
+      "companyName": null,
+      "merchantId": "7b9baeac-ede4-4f5c-b4e3-52c51c2db08c",
+      "customerNumber": 90332333,
+      "homePhone": null,
+      "mobilePhone": null,
+      "referenceId": "1234567890",
+      "customerStatuses": [
+        "NoSubscription",
+        "NoPaymentMethod"
+      ],
+      "address": null,
+      "createdOn": "2016-04-25T16:56:05.783"
+    },
+    {
+      "customerId": "20e68ad7-ff54-4cb6-8556-f87f58bcf995",
+      "firstName": "TestName",
+      "surname": "TestSurname",
+      "email": "test1email@ptt.yu",
+      "gender": null,
+      "dateOfBirth": null,
+      "companyName": null,
+      "merchantId": "7b9baeac-ede4-4f5c-b4e3-52c51c2db08c",
+      "customerNumber": 90332335,
+      "homePhone": null,
+      "mobilePhone": null,
+      "referenceId": "1222333444",
+      "customerStatuses": [
+        "NoSubscription"
+      ],
+      "address": null,
+      "createdOn": "2016-04-25T17:55:25.677"
+    }
+  ]
+}

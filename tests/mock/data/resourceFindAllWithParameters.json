@@ -1,0 +1,79 @@
+{
+  "Customer Resource": {
+    "0": "Customer",
+    "findAll": {
+      "method": "GET",
+      "url": "customers",
+      "data": {
+        "limit":25,
+        "offset":0
+      }
+    }
+  },
+  "Invoice Resource": {
+    "0": "Invoice",
+    "findAll": {
+      "method": "GET",
+      "url": "invoices",
+      "data": {
+        "limit":25,
+        "offset":0
+      }
+    }
+  },
+  "InvoiceItem Resource": {
+    "0": "InvoiceItem",
+    "findAll": []
+  },
+  "Payment Resource": {
+    "0": "Payment",
+    "findAll": {
+      "method": "GET",
+      "url": "payments",
+      "data": {
+        "limit":25,
+        "offset":0
+      }
+    }
+  },
+  "PaymentMethod Resource": {
+    "0": "PaymentMethod",
+    "findAll": {
+      "method": "GET",
+      "url": "paymentmethods",
+      "data": {
+        "limit":25,
+        "offset":0
+      }
+    }
+  },
+  "Plan Resource": {
+    "0": "Plan",
+    "findAll": {
+      "method": "GET",
+      "url": "plans",
+      "data": {
+        "limit":25,
+        "offset":0
+      }
+    }
+  },
+  "Settlement Resource": {
+    "0": "Settlement",
+    "findAll": {
+      "limit":25,
+      "offset":0
+    }
+  },
+  "Subscription Resource": {
+    "0": "Subscription",
+    "findAll": {
+      "method": "GET",
+      "url": "subscriptions",
+      "data": {
+        "limit":25,
+        "offset":0
+      }
+    }
+  }
+}

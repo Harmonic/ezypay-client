@@ -1,0 +1,87 @@
+{
+  "Customer Resource": {
+    "0": "Customer",
+    "update": {
+      "method": "PUT",
+      "url": "customers",
+      "ID": "33160580-3e25-49f4-b01c-274634cb3011",
+      "data": {
+        "email": "some_email@ptt.yu",
+        "firstName": "SomeFirstName",
+        "surname": "SomeSurName",
+        "referenceId": "123456"
+      }
+    }
+  },
+  "Invoice Resource": {
+    "0": "Invoice",
+    "update": {
+      "method": "PUT",
+      "url": "invoices",
+      "ID": "afb76332-b42d-4a31-a7be-b903e26445cc",
+      "data": {
+        "invoiceDate": "2017-05-26",
+        "statementDescription": "statement Description update",
+        "description": "description update"
+      }
+    }
+  },
+  "InvoiceItem Resource": {
+    "0": "InvoiceItem",
+    "update": {
+      "method": "PUT",
+      "url": "invoiceitems",
+      "ID": "0215a60f-6d6b-4f21-9af8-15d76e815fe5",
+      "data": {
+        "amount": 265,
+        "description": "Descr[optional]. Test add invoice item -update"
+      }
+    }
+  },
+  "Payment Resource": {
+    "0": "Payment",
+    "update": []
+  },
+  "PaymentMethod Resource": {
+    "0": "PaymentMethod",
+    "update": []
+  },
+  "Plan Resource": {
+    "0": "Plan",
+    "update": {
+      "method": "PUT",
+      "url": "plans",
+      "ID": "fffcf9aa-fc2a-49c4-8f77-423ededd346b",
+      "data": {
+        "name": "Test plan 100-13",
+        "description": "Test plan 100-13 description",
+        "merchantId": "7b9baeac-ede4-4f5c-b4e3-52c51c2db08c",
+        "status": "INACTIVE",
+        "signupViaHostedPaymentPage": false,
+        "schedules": [
+          {
+            "amount": 113,
+            "startType": "IMMEDIATE",
+            "endType": "TOTAL_AMOUNT",
+            "description": "Schedule description"
+          }
+        ]
+      }
+    }
+  },
+  "Settlement Resource": {
+    "0": "Settlement",
+    "update": []
+  },
+  "Subscription Resource": {
+    "0": "Subscription",
+    "update": {
+      "method": "PUT",
+      "url": "subscriptions",
+      "ID":"2decdd31-c02e-46fa-93d6-4cf5f4b06708",
+      "data": {
+        "paymentmethodId" : "c115d95a-de42-48fb-862c-9d7edb675c81"
+      }
+    }
+  }
+}

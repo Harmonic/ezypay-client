@@ -1,0 +1,187 @@
+{
+  "customerId": "33160580-3e25-49f4-b01c-274634cb3011",
+  "firstName": "Petartest",
+  "surname": "Borovcanintest",
+  "email": "tetst@ptt.yu",
+  "gender": null,
+  "dateOfBirth": null,
+  "companyName": null,
+  "merchantId": "7b9baeac-ede4-4f5c-b4e3-52c51c2db08c",
+  "customerNumber": 90332328,
+  "homePhone": null,
+  "mobilePhone": null,
+  "referenceId": "10101010101010",
+  "customerStatuses": [
+    "OutstandingInvoices"
+  ],
+  "address": null,
+  "paymentMethods": [
+    {
+      "paymentMethodId": "e16c6bfc-3ef8-45e5-8124-7c531b72c929",
+      "customerId": "33160580-3e25-49f4-b01c-274634cb3011",
+      "type": "Bank",
+      "bankHolderName": "Commonwealth Bank of Australia",
+      "bankAccountNumberDisplay": "X-5678",
+      "bankNumber": "067012",
+      "branchNumber": null,
+      "suffixNumber": null,
+      "last4": null,
+      "cardHolderName": null,
+      "cardIssuer": null,
+      "expiryDate": null,
+      "status": "Active",
+      "isDefault": true,
+      "createdOn": "2016-04-19T18:25:53"
+    },
+    {
+      "paymentMethodId": "c115d95a-de42-48fb-862c-9d7edb675c81",
+      "customerId": "33160580-3e25-49f4-b01c-274634cb3011",
+      "type": "Bank",
+      "bankHolderName": "Commonwealth Bank of Australia - 2",
+      "bankAccountNumberDisplay": "X-6132",
+      "bankNumber": "067012",
+      "branchNumber": null,
+      "suffixNumber": null,
+      "last4": null,
+      "cardHolderName": null,
+      "cardIssuer": null,
+      "expiryDate": null,
+      "status": "Active",
+      "isDefault": false,
+      "createdOn": "2016-04-28T15:28:27.273"
+    }
+  ],
+  "subscriptions": [
+    {
+      "subscriptionId": "014697c3-b800-4735-b6bb-7d143c23300f",
+      "customerId": "33160580-3e25-49f4-b01c-274634cb3011",
+      "planId": "fffcf9aa-fc2a-49c4-8f77-423ededd346b",
+      "subscriptionName": "Test plan 100-13",
+      "status": "Cancelled",
+      "subscriptionStartDate": "2016-04-20T00:00:00",
+      "subscriptionEndDate": "2016-04-20T00:00:00",
+      "nextBillingDate": null,
+      "nextBillingAmount": null,
+      "totalUpToDatePaymentCollection": 0.0,
+      "totalUpToDateBillingCycles": 0,
+      "remainingPaymentCollection": null,
+      "remainingBillingCycles": null,
+      "paymentMethodId": "e16c6bfc-3ef8-45e5-8124-7c531b72c929",
+      "schedules": [
+        {
+          "scheduleStartDate": "2016-04-20T00:00:00",
+          "scheduleEndDate": "2016-04-20T00:00:00",
+          "amount": 25.0,
+          "frequency": null,
+          "interval": 0
+        }
+      ],
+      "createdOn": "2016-04-19T16:31:36.493"
+    },
+    {
+      "subscriptionId": "6b0d4a08-d30c-4d27-8668-483cc31c2d00",
+      "customerId": "33160580-3e25-49f4-b01c-274634cb3011",
+      "planId": "fffcf9aa-fc2a-49c4-8f77-423ededd346b",
+      "subscriptionName": "Test plan 100-13",
+      "status": "Active",
+      "subscriptionStartDate": "2016-04-26T00:00:00",
+      "subscriptionEndDate": "2016-04-26T00:00:00",
+      "nextBillingDate": null,
+      "nextBillingAmount": null,
+      "totalUpToDatePaymentCollection": 25.0000,
+      "totalUpToDateBillingCycles": 1,
+      "remainingPaymentCollection": 0.0,
+      "remainingBillingCycles": 0,
+      "paymentMethodId": "e16c6bfc-3ef8-45e5-8124-7c531b72c929",
+      "schedules": [
+        {
+          "scheduleStartDate": "2016-04-26T00:00:00",
+          "scheduleEndDate": "2016-04-26T00:00:00",
+          "amount": 25.0,
+          "frequency": null,
+          "interval": 0
+        }
+      ],
+      "createdOn": "2016-04-25T16:22:25.003"
+    },
+    {
+      "subscriptionId": "fcfdd304-5b84-4a06-99f9-51554ff7acb8",
+      "customerId": "33160580-3e25-49f4-b01c-274634cb3011",
+      "planId": "0c91f62a-53db-4eb7-8503-8049a5fceffc",
+      "subscriptionName": "Test plan 100",
+      "status": "Active",
+      "subscriptionStartDate": "2016-04-29T00:00:00",
+      "subscriptionEndDate": "2016-04-29T00:00:00",
+      "nextBillingDate": null,
+      "nextBillingAmount": null,
+      "totalUpToDatePaymentCollection": 100.0000,
+      "totalUpToDateBillingCycles": 1,
+      "remainingPaymentCollection": 0.0,
+      "remainingBillingCycles": 0,
+      "paymentMethodId": "e16c6bfc-3ef8-45e5-8124-7c531b72c929",
+      "schedules": [
+        {
+          "scheduleStartDate": "2016-04-29T00:00:00",
+          "scheduleEndDate": "2016-04-29T00:00:00",
+          "amount": 100.0,
+          "frequency": null,
+          "interval": 0
+        }
+      ],
+      "createdOn": "2016-04-28T18:04:20.753"
+    },
+    {
+      "subscriptionId": "2decdd31-c02e-46fa-93d6-4cf5f4b06708",
+      "customerId": "33160580-3e25-49f4-b01c-274634cb3011",
+      "planId": "2bd6ddf7-4d40-40ec-8fff-4bb1c16a46e3",
+      "subscriptionName": "Plan 25",
+      "status": "Active",
+      "subscriptionStartDate": "2016-05-02T00:00:00",
+      "subscriptionEndDate": "2016-05-02T00:00:00",
+      "nextBillingDate": null,
+      "nextBillingAmount": null,
+      "totalUpToDatePaymentCollection": 0.0,
+      "totalUpToDateBillingCycles": 0,
+      "remainingPaymentCollection": 421.0000,
+      "remainingBillingCycles": 1,
+      "paymentMethodId": "c115d95a-de42-48fb-862c-9d7edb675c81",
+      "schedules": [
+        {
+          "scheduleStartDate": "2016-05-02T00:00:00",
+          "scheduleEndDate": "2016-05-02T00:00:00",
+          "amount": 25.0,
+          "frequency": null,
+          "interval": 0
+        }
+      ],
+      "createdOn": "2016-04-29T15:37:43.493"
+    },
+    {
+      "subscriptionId": "5c27c3b5-4d63-456c-9c9d-6725b84defe0",
+      "customerId": "33160580-3e25-49f4-b01c-274634cb3011",
+      "planId": "2bd6ddf7-4d40-40ec-8fff-4bb1c16a46e3",
+      "subscriptionName": "Plan 25",
+      "status": "Cancelled",
+      "subscriptionStartDate": "2016-05-04T00:00:00",
+      "subscriptionEndDate": "2016-05-04T00:00:00",
+      "nextBillingDate": null,
+      "nextBillingAmount": null,
+      "totalUpToDatePaymentCollection": 0.0,
+      "totalUpToDateBillingCycles": 0,
+      "remainingPaymentCollection": null,
+      "remainingBillingCycles": null,
+      "paymentMethodId": "e16c6bfc-3ef8-45e5-8124-7c531b72c929",
+      "schedules": [
+        {
+          "scheduleStartDate": "2016-05-04T00:00:00",
+          "scheduleEndDate": "2016-05-04T00:00:00",
+          "amount": 25.0,
+          "frequency": null,
+          "interval": 0
+        }
+      ],
+      "createdOn": "2016-05-03T19:16:11.74"
+    }
+  ],
+  "createdOn": "2016-04-18T16:45:14.133"
+}

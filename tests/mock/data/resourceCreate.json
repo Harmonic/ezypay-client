@@ -1,0 +1,96 @@
+{
+  "Customer Resource": {
+    "0": "Customer",
+    "create": {
+      "method": "POST",
+      "url": "customers",
+      "data": {
+        "merchantId": "7b9baeac-ede4-4f5c-b4e3-52c51c2db08c",
+        "email": "pepe2@ptt.yu",
+        "firstName": "PepeName",
+        "surname": "PepeSurname",
+        "referenceId": "114455-85"
+      }
+    }
+  },
+  "Invoice Resource": {
+    "0": "Invoice",
+    "create": {
+      "method": "POST",
+      "url": "invoices",
+      "data": {
+        "customerId": "33160580-3e25-49f4-b01c-274634cb3011",
+        "amount": 360,
+        "invoiceDate": "2016-05-12"
+      }
+    }
+  },
+  "InvoiceItem Resource": {
+    "0": "InvoiceItem",
+    "create": {
+      "method": "POST",
+      "url": "invoiceitems",
+      "data": {
+        "invoiceId": "d16f44d0-c401-453a-8648-da765795067a",
+        "amount": 156,
+        "description": "Description[optional]. Test add invoice item"
+      }
+    }
+  },
+  "Payment Resource": {
+    "0": "Payment",
+    "create": []
+  },
+  "PaymentMethod Resource": {
+    "0": "PaymentMethod",
+    "create": {
+      "method": "POST",
+      "url": "paymentmethods/banks",
+      "data": {
+        "customerId": "20e68ad7-ff54-4cb6-8556-f87f58bcf995",
+        "bankHolderName": "Commonwealth Bank of Australia -38",
+        "bankAccountNumber": 88888888,
+        "bankNumber": "067012",
+        "termAndConditionAgreed": "true"
+      }
+    }
+  },
+  "Plan Resource": {
+    "0": "Plan",
+    "create": {
+      "method": "POST",
+      "url": "plans",
+      "data": {
+        "name": "Test plan 100 -8",
+        "description": "Test plan 100-8 description",
+        "merchantId": "7b9baeac-ede4-4f5c-b4e3-52c51c2db08c",
+        "status": "INACTIVE",
+        "signupViaHostedPaymentPage": false,
+        "schedules": [
+          {
+            "amount": 108,
+            "startType": "IMMEDIATE",
+            "endType": "TOTAL_AMOUNT",
+            "description": "Schedule description"
+          }
+        ]
+      }
+    }
+  },
+  "Settlement Resource": {
+    "0": "Settlement",
+    "create": []
+  },
+  "Subscription Resource": {
+    "0": "Subscription",
+    "create": {
+      "method": "POST",
+      "url": "subscriptions",
+      "data": {
+        "customerId": "33160580-3e25-49f4-b01c-274634cb3011",
+        "planId": "2bd6ddf7-4d40-40ec-8fff-4bb1c16a46e3",
+        "status": "Inactive"
+      }
+    }
+  }
+}

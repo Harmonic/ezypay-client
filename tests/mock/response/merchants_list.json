@@ -1,0 +1,29 @@
+{
+  "totalReturned": 1,
+  "totalRecord": 1,
+  "data": [
+    {
+      "merchantId": "7b9baeac-ede4-4f5c-b4e3-52c51c2db08c",
+      "merchantName": "Ezypay API v2 Test Site",
+      "tradingName": "Ezypay API v2 Test Site",
+      "merchantAccountName": "Test Account",
+      "merchantAccountReference": "63822",
+      "fullAddress": {
+        "address1": "9 Help Street",
+        "address2": "",
+        "postcode": "2067",
+        "state": "NSW",
+        "suburb": "Chatswood",
+        "townCity": "-",
+        "createdOn": "2016-02-10T16:51:35.59"
+      },
+      "email": "test.support@iconnect360.com",
+      "phoneNumber": "0411111111",
+      "supportedPaymentMethods": [
+        "Amex",
+        "Bank",
+        "MasterCardVisa"
+      ]
+    }
+  ]
+}
