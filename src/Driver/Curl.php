@@ -2,14 +2,15 @@
 
 
 namespace Ezypay\Driver;
-use Ezypay\Contract\DriverInterface;
+use Ezypay\Contract\IDriver;
+
 use Ezypay\Result\ResultList;
 
 /**
  * Class Curl
  * @package Ezypay\Driver
  */
-class Curl implements DriverInterface
+class Curl implements IDriver
 {
     /**
      * @var $base_url string

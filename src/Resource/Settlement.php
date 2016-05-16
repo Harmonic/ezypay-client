@@ -2,7 +2,7 @@
 
 namespace Ezypay\Resource;
 
-use Ezypay\Contract\DriverInterface;
+use Ezypay\Contract\IDriver;
 use Ezypay\Contract\IResourceSettlement;
 use Ezypay\Result\ResultProducer;
 use Ezypay\Validation\ValidationBase;
@@ -24,7 +24,7 @@ class Settlement extends Resurce implements IResourceSettlement
      * @param \DriverInterface $connector
      * @param ValidationBase $validation
      */
-    public function __construct(DriverInterface $connector, ValidationBase $validation)
+    public function __construct(IDriver $connector, ValidationBase $validation)
     {
         parent::__construct($connector, $validation, $this->resourceType);
     }

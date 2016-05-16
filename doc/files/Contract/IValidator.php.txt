@@ -1,0 +1,28 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: peroperje
+ * Date: 16.5.16.
+ * Time: 09.30
+ */
+namespace Ezypay\Contract;
+
+
+/**
+ * Created by PhpStorm.
+ * User: peroperje
+ * Date: 13.5.16.
+ * Time: 08.43
+ */
+interface IValidator
+{
+    /**
+     * @return bool
+     */
+    public function validate();
+
+    /**
+     * @return string
+     */
+    public function getFormattedError();
+}

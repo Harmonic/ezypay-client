@@ -3,7 +3,7 @@
 
 namespace Ezypay\Result;
 
-use Ezypay\Contract\DriverInterface;
+use Ezypay\Contract\IDriver;
 use Ezypay\Validation\ValidationBase;
 
 /**
@@ -16,7 +16,7 @@ use Ezypay\Validation\ValidationBase;
 class ResultProducer
 {
     /**
-     * @var DriverInterface $connector connector
+     * @var IDriver $connector connector
      */
     protected $connector;
     /**
@@ -29,11 +29,11 @@ class ResultProducer
     /**
      * ResultProducer constructor.
      *
-     * @param DriverInterface $connector
+     * @param IDriver $connector
      * @param $validation ValidationBase
      * @param $resourceType string resource name
      */
-    public function __construct(DriverInterface $connector, ValidationBase $validation, $resourceType)
+    public function __construct(IDriver $connector, ValidationBase $validation, $resourceType)
     {
         $this->connector = $connector;
         $this->resourceType = $resourceType;

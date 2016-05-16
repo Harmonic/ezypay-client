@@ -4,7 +4,7 @@
 namespace Ezypay\Resource;
 
 
-use Ezypay\Contract\DriverInterface;
+use Ezypay\Contract\IDriver;
 use Ezypay\Contract\IResourceCreate;
 use Ezypay\Contract\IResourceInvoice;
 use Ezypay\Contract\IResourceUpdate;
@@ -25,10 +25,10 @@ class Invoice extends Resurce implements IResourceInvoice, IResourceCreate, IRes
 
     /**
      * Invoice constructor.
-     * @param DriverInterface $connector
+     * @param IDriver $connector
      * @param ValidationBase $validation
      */
-    public function __construct(DriverInterface $connector, ValidationBase $validation)
+    public function __construct(IDriver $connector, ValidationBase $validation)
     {
         parent::__construct($connector, $validation, $this->resourceType);
     }
