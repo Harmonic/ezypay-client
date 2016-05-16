@@ -1,0 +1,115 @@
+<?php
+
+
+namespace Ezypay\Resource;
+
+
+use Ezypay\Object\ObjectFactory;
+
+/**
+ * Class Plan
+ * @package Ezypay\Resource
+ */
+class Plan extends Resurce implements \resourceInterfacePlan , \resourceInterfaceCreate ,\resourceInterfaceUpdate
+{
+    /**
+     * @var string defautl object name
+     */
+    private $objectType = 'Plan';
+
+
+    /**
+     * Plan constructor.
+     * @param \driverInterface $connector
+     */
+    public function __construct( \driverInterface $connector )
+    {
+        parent::__construct($connector,$this->objectType);
+    }
+
+    /**
+     * Get list of available plan.
+     *
+     * @link https://demoapi.ezypay.com/help/docs#!/Plans/PlansApi_GetPlanList
+     * @param array $data
+     * @return \result | \resultInterfaceList
+     */
+    public function findAll(array $data=array())
+    {
+        $this->settings(array(
+            'url'    => !empty($data)?'plans?'.http_build_query($data):'plans',
+            'method' => 'GET'
+        ));
+        return $this->result();
+    }
+
+    /**
+     * Get an existing plan with a given planId.
+     *
+     * @link https://demoapi.ezypay.com/help/docs#!/Plans/PlansApi_GetPlan
+     * @param $id
+     * @return \result | \resultInterfaceError
+     */
+    public function findById($id)
+    {
+        $this->settings(array(
+            'url' => 'plans/' . $id ,
+            'method' => 'GET',
+        ));
+        return $this->result();
+
+    }
+
+    /**
+     * Creating a new plans can be done easily via the dashboard page. Alternatively, plans creation are available through API if creation of plans needs to be done on the fly.
+     *
+     * @link https://demoapi.ezypay.com/help/docs#!/Plans/PlansApi_CreatePlan
+     * @param array $data The Plan data. Refer to Request Body Schema (see link).
+     * @return \result | \resultInterfaceError
+     */
+    public function create(array $data)
+    {
+        $this->settings(array(
+            'url' =>'plans',
+            'method' => 'POST',
+            'data' => $data
+        ));
+        return $this->result();
+    }
+
+    /**
+     * Update the details of an existing plan, any subscriptions that are linked to the existing plans would not be affected by this change.
+     *
+     * @link https://demoapi.ezypay.com/help/docs#!/Plans/PlansApi_UpdatePlan
+     * @param $id string The ID of the plan.
+     * @param array $data The Plan data. Refer to Request Body Schema (see link)
+     * @return \result | \resultInterfaceError
+     */
+    public function update($id, array $data)
+    {
+        $this->settings(array(
+            'url' => 'plans/' . $id ,
+            'method' => 'PUT',
+            'data' => $data
+        ));
+
+        return $this->result();
+    }
+
+    /**
+     * Inactivate an existing plan. That that is marked as Inactive would disable it's use from Subscriptions and Online Signup.
+     *
+     * @link https://demoapi.ezypay.com/help/docs#!/Plans/PlansApi_DeactivatePlan
+     * @param $id string The ID of the plan.
+     * @return bool|\Ezypay\Object\Plan
+     */
+    public function deactivate($id)
+    {
+        $this->settings(array(
+            'url' => 'plans/' . $id ,
+            'method' => 'DELETE'
+        ));
+
+        return $this->result();
+    }
+}

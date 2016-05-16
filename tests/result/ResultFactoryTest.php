@@ -15,8 +15,8 @@ class ResultFactoryTest extends PHPUnit_Framework_TestCase
     public function dataProviderSuccess()
     {
         return array(
-            'test Customer List' => array('Customer', 'list', 'resultInterfaceList'),
-            'test Customer Single' => array('Customer', 'single', 'result'),
+            'test Customer List' => array('Customer', 'list', 'Ezypay\Contract\IResultList'),
+           'test Customer Single' => array('Customer', 'single', 'Ezypay\Contract\IResult'),
         );
     }
 
@@ -30,7 +30,7 @@ class ResultFactoryTest extends PHPUnit_Framework_TestCase
     public function dataProviderError()
     {
         return array(
-            'test Customer Error' => array('Customer', 'error', 'result')
+            'test Customer Error' => array('Customer', 'error', 'Ezypay\Contract\IResult')
         );
     }
 
@@ -53,13 +53,13 @@ class ResultFactoryTest extends PHPUnit_Framework_TestCase
          */
         $result = $resultFactory->run();
 
-        $this->assertInstanceOf('result', $result, 'Failed.Not implemets result interface');
+      //  $this->assertInstanceOf('IResult', $result, 'Failed.Not implemets result interface');
         $this->assertInstanceOf($implements, $result, 'Failed. Not implement custom interface.' . $implements);
         $this->assertTrue($result->isSuccess(), 'Failed. Is not success' . $resourceType . '-' . $resultType);
         $this->assertNotEmpty($result->data(), 'Failed. Data is empty ' . $resourceType . ' - ' . $resultType);
 
         $data = $resultType === 'list' ? $result->data()[0] : $result->data();
-        $this->assertInstanceOf('\\Ezypay\Object\\' . $resourceType, $data, 'Failed. Not instance of \\Ezypay\Object\\' . $resourceType);
+        $this->assertInstanceOf('\Ezypay\Object\\' . $resourceType, $data, 'Failed. Not instance of \\Ezypay\Object\\' . $resourceType);
 
     }
 
@@ -70,7 +70,7 @@ class ResultFactoryTest extends PHPUnit_Framework_TestCase
      * @param $resourceType string resource name from data provider
      * @param $resultType string result type from data provider
      */
-    public function testRunError($resourceType, $resultType)
+    public function testRunError($resourceType, $resultType,$implements)
     {
         $jsonResponse = file_get_contents('./mock/response/' . $resourceType . '_' . $resultType . '.json');
 
@@ -81,7 +81,8 @@ class ResultFactoryTest extends PHPUnit_Framework_TestCase
          * @var $result result
          */
         $result = $resultFactory->run();
-        $this->assertInstanceOf('result', $result, 'Failed.Not implemets result interface');
+        //$this->assertInstanceOf('result', $result, 'Failed.Not implemets result interface');
+        $this->assertInstanceOf($implements, $result, 'Failed. Not implement custom interface.' . $implements);
         $this->assertFalse($result->isSuccess(), 'Failed. Is not success' . $resourceType . '-' . $resultType);
 
         $this->assertEquals(json_decode($jsonResponse,true),$result->data()['data'],'Failed. Data is not same');

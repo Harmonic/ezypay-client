@@ -12,7 +12,7 @@
 class ResourceInvoiceCustomTest extends PHPUnit_Framework_TestCase
 {
     /**
-     * @var $connector driverInterface
+     * @var $connector DriverInterface
      */
     protected $connector;
     /**
@@ -21,7 +21,7 @@ class ResourceInvoiceCustomTest extends PHPUnit_Framework_TestCase
     protected $resource;
 
     /**
-     * @return driverInterface
+     * @return DriverInterface
      */
     public function setUp()
     {

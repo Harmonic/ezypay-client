@@ -1,0 +1,46 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: peroperje
+ * Date: 2.5.16.
+ * Time: 14.20
+ */
+
+namespace Ezypay\Result;
+
+
+use Ezypay;
+
+class resultSingle implements \result
+{
+    private $data;
+    private $isSuccess=true;
+    /**
+     * Result constructor.
+     * @param array $data
+     */
+    public function __construct(array $data)
+    {
+        foreach ( $data as $key => $value ){
+            if(property_exists ($this, $key )){
+                $this->$key = $value;
+            }
+        }
+    }
+
+    /**
+     * @return Ezypay\Object | Ezypay\Object[]
+     */
+    public function data()
+    {
+        return $this->data;
+    }
+
+    /**
+     * @return bool
+     */
+    public function isSuccess()
+    {
+        return $this->isSuccess;
+    }
+}

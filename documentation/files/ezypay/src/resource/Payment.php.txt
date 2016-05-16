@@ -1,0 +1,63 @@
+<?php
+
+namespace Ezypay\Resource;
+
+
+use Ezypay\Object\ObjectFactory;
+
+/**
+ * Class Payment
+ * @package Ezypay\Resource
+ */
+class Payment extends Resurce implements \resourceInterface
+{
+    /**
+     * @var string defautl object name
+     */
+    private $objectType = 'Payment';
+
+    /**
+     * Payment constructor.
+     * @param \driverInterface $connector
+     */
+    public function __construct( \driverInterface $connector )
+    {
+        parent::__construct($connector,$this->objectType);
+    }
+
+    /**
+     * Get Payment List
+     *
+     * @link https://demoapi.ezypay.com/help/docs#!/Payments/PaymentsApi_GetPaymentList
+     * @param array $data Parameters (see link)
+     * @return \resultInterfaceList | \resultInterfaceError
+     */
+    public function findAll(array $data)
+    {
+        $this->settings(array(
+            'url'=>'payments?' . http_build_query($data),
+            'method'=> 'GET'
+        ));
+
+        return $this->result();
+    }
+
+    /**
+     * Get Payment Details
+     *
+     * @link https://demoapi.ezypay.com/help/docs#!/Payments/PaymentsApi_GetPaymentDetails
+     * @param $id string The running number of the payment.
+     * @return bool|\Ezypay\Object\Payment
+     *
+     */
+    public function findById($id)
+    {
+        $this->settings(array(
+            'url'=> 'payments/' .$id ,
+            'method'=> 'GET'
+        ));
+
+        return $this->result();
+    }
+
+}

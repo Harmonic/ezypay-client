@@ -8,9 +8,9 @@
 
 namespace Ezypay;
 
+use Ezypay\Contract\DriverInterface;
+use Ezypay\Contract\IResource;
 use Ezypay\Validation\ValidationBase;
-
-
 
 /**
  * Class Ezypay
@@ -24,13 +24,13 @@ class Ezypay
      * Factory for resource
      *
      * @param $name string
-     * @param $driver \driverInterface
+     * @param $driver DriverInterface
      *
-     * @return \resourceInterface
+     * @return IResource
      */
-    public static function resource($name, \driverInterface $driver, ValidationBase $validationBase)
+    public static function resource($name, DriverInterface $driver, ValidationBase $validationBase)
     {
-        if (class_exists('Ezypay\\Resource\\'.$name,false))
+        if (class_exists('Ezypay\\Resource\\'.$name))
         {
             $class = 'Ezypay\\Resource\\'.$name;
             return new $class($driver,$validationBase);
@@ -44,13 +44,13 @@ class Ezypay
      *
      * @param $name string
      * @param $data array settings
-     * @return \driverInterface
+     * @return DriverInterface
      */
     public static function driver($name,array $data)
     {
-        if (class_exists('Ezypay\\Driver\\'.$name,false))
+        if (class_exists('Ezypay\Driver\\'.$name))
         {
-            $class = 'Ezypay\\Driver\\'.$name;
+            $class ='Ezypay\Driver\\'.$name;
             return new $class($data);
         }
     }

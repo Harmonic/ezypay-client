@@ -8,7 +8,7 @@
 class ResourceSubscriptionCustomTest extends PHPUnit_Framework_TestCase
 {
     /**
-     * @var driverInterface $connector connector
+     * @var DriverInterface $connector connector
      */
     protected $connector;
     /**
@@ -17,7 +17,7 @@ class ResourceSubscriptionCustomTest extends PHPUnit_Framework_TestCase
     protected $resource;
 
     /**
-     * @return driverInterface
+     * @return DriverInterface
      */
     public function setUp()
     {

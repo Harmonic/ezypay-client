@@ -1,0 +1,30 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: peroperje
+ * Date: 2.5.16.
+ * Time: 21.05
+ */
+
+namespace Ezypay\Result;
+
+
+class ResultFactory
+{
+    /**
+     * Object Factory
+     *
+     * Create object from provided data
+     *
+     * @param $name string Class name
+     * @param $data array array of the property values
+     * @return mixed
+     */
+    public static function createObject($name, $data){
+        if (class_exists('Ezypay\\Result\\'.$name,false))
+        {
+            $class = 'Ezypay\\Result\\'.$name;
+            return new $class($data);
+        }
+    }
+}

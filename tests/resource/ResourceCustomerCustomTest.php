@@ -13,7 +13,7 @@ class ResourceCustomerCustomTest extends PHPUnit_Framework_TestCase
     public function testFindByReferenceID(){
 
         /**
-         * @var $connector driverInterface
+         * @var $connector DriverInterface
          */
         $connector = \Ezypay\Ezypay::driver('Curl', array(
             'base_url' => BASE_URL,

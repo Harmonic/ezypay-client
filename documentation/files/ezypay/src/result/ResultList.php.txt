@@ -1,0 +1,57 @@
+<?php
+
+
+namespace Ezypay\Result;
+
+
+use Ezypay;
+
+class ResultList implements \resultInterfaceList
+{
+
+    private $totalReturned;
+    private $totalRecord;
+    private $data;
+    private $isSuccess=true;
+    /**
+     * Result constructor.
+     * @param array $data
+     */
+    public function __construct(array $data)
+    {
+        foreach ( $data as $key => $value ){
+            if(property_exists ($this, $key )){
+                //echo $key .' ' .$value .'<br>';
+                $this->$key = $value;
+            }
+
+        }
+
+    }
+
+    /**
+     * @return Ezypay\Object | Ezypay\Object[]
+     */
+    public function data()
+    {
+        return $this->data;
+    }
+
+    /**
+     * @return bool
+     */
+    public function isSuccess()
+    {
+       return  $this->isSuccess;
+    }
+
+    public function totalReturned()
+    {
+        return $this->totalReturned;
+    }
+
+    public function totalRecord()
+    {
+        return $this->totalRecord;
+    }
+}

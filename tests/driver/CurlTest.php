@@ -14,6 +14,7 @@ class CurlTest extends PHPUnit_Framework_TestCase
 
     public function setUp()
     {
+        
         $this->connector = \Ezypay\Ezypay::driver('Curl', array(
             'base_url' => BASE_URL,
             'apiKey' => API_KEY

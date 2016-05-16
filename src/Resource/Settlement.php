@@ -1,0 +1,104 @@
+<?php
+
+namespace Ezypay\Resource;
+
+use Ezypay\Contract\DriverInterface;
+use Ezypay\Contract\IResourceSettlement;
+use Ezypay\Result\ResultProducer;
+use Ezypay\Validation\ValidationBase;
+
+/**
+ * Class Settlement
+ *
+ * @package Ezypay\Resource
+ */
+class Settlement extends Resurce implements IResourceSettlement
+{
+    /**
+     * @var string defautl object name
+     */
+    private $resourceType = 'Settlement';
+
+    /**
+     * constructor.
+     * @param \DriverInterface $connector
+     * @param ValidationBase $validation
+     */
+    public function __construct(DriverInterface $connector, ValidationBase $validation)
+    {
+        parent::__construct($connector, $validation, $this->resourceType);
+    }
+
+    /**
+     * Get Latest Settlement
+     *
+     * @link https://demoapi.ezypay.com/help/docs#!/Settlements/SettlementsApi_GetSettlementDetail
+     * @param $merchantId string The ID of the merchant. Filter settlements that belongs only to a Merchant.
+     * @return ResultProducer
+     */
+    public function latest($merchantId)
+    {
+        $this->settings(array(
+            'url' => 'settlements/' . $merchantId . '/latest',
+            'method' => 'GET'
+        ));
+
+        return $this->result();
+    }
+
+    /**
+     * List the settlements based on the given filters. MerchantId is compulsory.
+     *
+     * @link https://demoapi.ezypay.com/help/docs#!/Settlements/SettlementsApi_GetSettlementList
+     * @param array $data Parameters (see link)
+     * @return ResultProducer
+     */
+    public function findAll(array $data)
+    {
+        $merchantId = $data['merchantId'];
+        unset($data['merchantId']);
+
+        $this->settings(array(
+            'url' => 'settlements/' . $merchantId . '?' . http_build_query($data),
+            'method' => 'GET'
+        ));
+
+        return $this->result();
+    }
+
+    /**
+     * Get Settlement Revenue Details
+     *
+     * @link https://demoapi.ezypay.com/help/docs#!/Settlements/SettlementsApi_SettlementRevenueDetails
+     * @param $merchantId string The ID of the merchant. Filter settlements that belongs only to a Merchant.
+     * @param $settlementId integer The ID of the settlement. Filter settlement that belongs to the settlement run.
+     * @return ResultProducer
+     */
+    public function getRevenue($merchantId, $settlementId)
+    {
+        $this->settings(array(
+            'url' => 'settlements/' . $merchantId . '/revenue/' . $settlementId,
+            'method' => 'GET'
+        ));
+
+        return $this->result();
+    }
+
+    /**
+     * Get Settlement Deduction Details
+     *
+     * @param $merchantId string The ID of the merchant. Filter settlements that belongs only to a Merchant.
+     * @param $settlementId integer The ID of the settlement. Filter plans that belongs to the settlement run.
+     * @return ResultProducer
+     */
+    public function getDeduction($merchantId, $settlementId)
+    {
+        $this->settings(array(
+            'url' => 'settlements/' . $merchantId . '/deduction/' . $settlementId,
+            'method' => 'GET'
+        ));
+
+        return $this->result();
+    }
+
+}

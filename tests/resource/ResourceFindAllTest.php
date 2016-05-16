@@ -12,7 +12,7 @@ class ResourceFindAllTes extends PHPUnit_Framework_TestCase
     protected $validation;
 
     /**
-     * @return driverInterface
+     * @return DriverInterface
      */
     public function setUp()
     {

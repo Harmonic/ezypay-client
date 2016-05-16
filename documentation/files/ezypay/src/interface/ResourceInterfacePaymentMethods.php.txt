@@ -1,0 +1,9 @@
+<?php
+
+interface resourceInterfacePaymentMethods extends resourceInterface
+{
+    public function findDefault(array $data);
+    public function setDefault($paymentMethodId,$customerId);
+    public function remove($paymentMethodId,$customerId);
+}
+?>

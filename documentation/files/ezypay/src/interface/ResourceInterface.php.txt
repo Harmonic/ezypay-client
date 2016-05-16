@@ -1,0 +1,16 @@
+<?php
+
+/**
+ * Interface resourceInterface
+ */
+interface resourceInterface
+{
+    public function __construct(driverInterface $driverInterface);
+
+    public  function findAll(array $data);
+    public function findById($id);
+   // public function getError();
+    //public function getTotalReturned();
+    //public function getTotalRecord();
+}
+?>

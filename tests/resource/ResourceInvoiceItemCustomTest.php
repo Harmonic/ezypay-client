@@ -14,7 +14,7 @@ class ResourceInvoiceItemCustomTest extends PHPUnit_Framework_TestCase
     {
         $id = '0215a60f-6d6b-4f21-9af8-15d76e815fe5';
         /**
-         * @var $connector driverInterface
+         * @var $connector DriverInterface
          */
         $connector = \Ezypay\Ezypay::driver('Curl', array(
             'base_url' => BASE_URL,

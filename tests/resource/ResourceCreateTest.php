@@ -8,7 +8,7 @@
 class ResourceCreateTest extends PHPUnit_Framework_TestCase
 {
     /**
-     * @var driverInterface $connector connector
+     * @var DriverInterface $connector connector
      */
     protected $connector;
     /**
@@ -17,7 +17,7 @@ class ResourceCreateTest extends PHPUnit_Framework_TestCase
     protected $validation;
 
     /**
-     * @return driverInterface
+     * @return DriverInterface
      */
     public function setUp()
     {

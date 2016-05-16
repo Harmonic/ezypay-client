@@ -1,0 +1,124 @@
+<?php
+
+namespace Ezypay\Validation;
+
+/**
+ * Class Validation
+ *
+ * Validation helper class
+ *
+ * @package Ezypay\Validation
+ */
+class Validation extends ValidationBase
+{
+    /**
+     * @var \validatorInterface[] $_validators arrey of validator object
+     */
+    protected $_validators = array();
+    /**
+     * @var array $_errors array of error message
+     */
+    protected $_errors = array();
+
+    /**
+     * Add new validator. return itself
+     * 
+     * @param \validatorInterface $validator
+     * @return $this
+     */
+    public function addValidator(\validatorInterface $validator)
+    {
+
+        $this->_validators[] = $validator;
+
+        return $this;
+
+    }
+
+    /**
+     * Return array of validators objects
+     *
+     * @return \validatorInterface[] |null
+     */
+    public function getValidators()
+    {
+
+        return !empty($this->_validators) ? $this->_validators : null;
+
+    }
+
+
+    /**
+     * Check all validators and set error message
+     * 
+     * @return bool
+     */
+    public function isValid()
+    {
+
+        $validators = $this->getValidators();
+
+        if (null !== $validators)
+
+        {
+
+            foreach ($validators as $validator)
+
+            {
+
+                if (!$validator->validate())
+
+                {
+
+                    $this->_errors[] = $validator->getFormattedError();
+
+                }
+
+            }
+
+        }
+
+        return empty($this->_errors) ? true : false;
+
+    }
+
+
+    /**
+     * @return array Error messages as array
+     */
+    public function getErrors()
+    {
+
+        return $this->_errors;
+
+    }
+
+
+    /**
+     * @return string Error messages as string
+     */
+    public function getErrorString()
+    {
+
+        $errors = $this->getErrors();
+
+        return !empty($errors) ? implode('', $errors) : '';
+
+    }
+
+
+    /**
+     * Clear instance state
+     * @return void
+     */
+    public function clear()
+    {
+
+        $this->_validators = array();
+
+        $this->_errors = array();
+
+    }
+
+}
+
