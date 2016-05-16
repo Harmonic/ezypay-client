@@ -9,6 +9,12 @@
             "email": "el.pionir@gmail.com"
         }
     ],
+    "repositories": [
+        {
+            "type": "git",
+            "url":  "git@bitbucket.org:peroperje/ezypayclient.git"
+        }
+    ],
     "minimum-stability": "dev",
     "require": {},
     "autoload": {
