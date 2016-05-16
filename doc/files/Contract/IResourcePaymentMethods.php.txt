@@ -2,7 +2,7 @@
 
 namespace Ezypay\Contract;
 
-interface IResourcePaymentMethods
+interface IResourcePaymentMethods extends IResource
 {
     public function findDefault(array $data);
 

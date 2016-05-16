@@ -7,7 +7,7 @@
  */
 namespace Ezypay\Contract;
 
-interface IResourceInvoice
+interface IResourceInvoice extends IResource
 {
     public function getNext($customerId, $subscriptionId);
 

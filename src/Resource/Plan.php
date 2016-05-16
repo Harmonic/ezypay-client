@@ -27,7 +27,7 @@ class Plan extends Resurce implements IResourcePlan, IResourceCreate, IResourceU
     /**
      * Plan constructor.
      *
-     * @param \DriverInterface $connector
+     * @param IDriver $connector
      * @param $validation ValidationBase
      */
     public function __construct(IDriver $connector, ValidationBase $validation)

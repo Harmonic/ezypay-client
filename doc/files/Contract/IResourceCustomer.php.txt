@@ -2,7 +2,7 @@
 
 namespace Ezypay\Contract;
 
-interface IResourceCustomer
+interface IResourceCustomer extends IResource
 {
     public function findByReferenceId($id);
 }

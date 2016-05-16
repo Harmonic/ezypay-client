@@ -21,7 +21,8 @@ class Payment extends Resurce implements IResource
 
     /**
      * Payment constructor.
-     * @param \DriverInterface $connector
+     * @param IDriver $connector
+     * @param $validation ValidationBase
      */
     public function __construct(IDriver $connector, ValidationBase $validation)
     {

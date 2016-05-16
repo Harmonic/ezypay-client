@@ -25,7 +25,7 @@ class InvoiceItem extends Resurce implements IResourceInvoiceItem, IResourceCrea
 
     /**
      * InvoiceItem constructor.
-     * @param \DriverInterface $connector
+     * @param IDriver $connector
      * @param $validation ValidationBase
      */
     public function __construct(IDriver $connector, ValidationBase $validation)

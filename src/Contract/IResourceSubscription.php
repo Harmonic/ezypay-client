@@ -7,7 +7,7 @@
  */
 namespace Ezypay\Contract;
 
-interface IResourceSubscription
+interface IResourceSubscription extends IResource
 {
     public function preview(array $data);
 

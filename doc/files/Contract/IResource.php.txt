@@ -4,17 +4,17 @@ namespace Ezypay\Contract;
 
 
 /**
- * Interface resourceInterface
+ * Interface IResource
  *
- * Base Resource interface
+ * @package Ezypay\Contract
  */
 interface IResource
 {
     /**
      * Set connector data to fetch collection of resource
-     *
+     * 
      * @param array $data
-     * @return \Ezypay\Result\ResultProducer
+     * @return mixed
      */
     public function findAll(array $data);
 

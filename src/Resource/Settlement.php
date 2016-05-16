@@ -21,7 +21,7 @@ class Settlement extends Resurce implements IResourceSettlement
 
     /**
      * constructor.
-     * @param \DriverInterface $connector
+     * @param IDriver $connector
      * @param ValidationBase $validation
      */
     public function __construct(IDriver $connector, ValidationBase $validation)

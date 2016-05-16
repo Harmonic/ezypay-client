@@ -7,7 +7,7 @@
  */
 namespace Ezypay\Contract;
 
-interface IResourcePlan
+interface IResourcePlan extends IResource
 {
     public function deactivate($id);
 }

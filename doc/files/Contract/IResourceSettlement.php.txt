@@ -11,7 +11,7 @@ namespace Ezypay\Contract;
 /**
  * Interface resourceInterface
  */
-interface IResourceSettlement
+interface IResourceSettlement 
 {
     public function latest($merchantId);
 
