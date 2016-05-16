@@ -1,7 +1,0 @@
-<?php
-
-interface resourceInterfacePlan extends resourceInterface
-{
-    public function deactivate($id);
-}
-?>

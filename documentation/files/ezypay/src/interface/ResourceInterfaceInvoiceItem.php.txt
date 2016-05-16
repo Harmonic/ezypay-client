@@ -1,7 +1,0 @@
-<?php
-
-interface resourceInterfaceInvoiceItem {
-    public function delete($id);
-}
-
-?>
