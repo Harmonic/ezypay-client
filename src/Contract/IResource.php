@@ -1,6 +1,7 @@
 <?php
 
 namespace Ezypay\Contract;
+use Ezypay\Result\ResultProducer;
 
 
 /**
@@ -14,7 +15,7 @@ interface IResource
      * Set connector data to fetch collection of resource
      * 
      * @param array $data
-     * @return mixed
+     * @return ResultProducer
      */
     public function findAll(array $data);
 
@@ -22,7 +23,7 @@ interface IResource
      * Set connector data to fetch single resource by ID
      *
      * @param $id string
-     * @return \Ezypay\Result\ResultProducer
+     * @return ResultProducer
      */
     public function findById($id);
 }
