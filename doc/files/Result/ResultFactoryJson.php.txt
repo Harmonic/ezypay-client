@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: peroperje
- * Date: 6.5.16.
- * Time: 13.48
- */
 
 namespace Ezypay\Result;
 

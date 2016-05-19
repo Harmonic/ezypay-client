@@ -1,7 +1,7 @@
 <?php
 
 
-class ResoultProducerTest extends PHPUnit_Framework_TestCase
+class ResultProducerTest extends PHPUnit_Framework_TestCase
 {
 
     /**
@@ -30,7 +30,8 @@ class ResoultProducerTest extends PHPUnit_Framework_TestCase
 
         return array(
             'Return as object' => array('object', '\Ezypay\Result\ResultFactory'),
-            'Return as json' => array('json', '\Ezypay\Result\ResultFactoryJson')
+            'Return as json' => array('json', '\Ezypay\Result\ResultFactoryJson'),
+            'Return as array' => array('array','\Ezypay\Result\ResultFactoryArray')
         );
     }
 

@@ -16,7 +16,7 @@ class ResultFactoryTest extends PHPUnit_Framework_TestCase
     {
         return array(
             'test Customer List' => array('Customer', 'list', 'Ezypay\Contract\IResultList'),
-           'test Customer Single' => array('Customer', 'single', 'Ezypay\Contract\IResult'),
+            //'test Customer Single' => array('Customer', 'single', 'Ezypay\Contract\IResult'),
         );
     }
 
@@ -47,13 +47,13 @@ class ResultFactoryTest extends PHPUnit_Framework_TestCase
 
         $jsonResponse = file_get_contents('./mock/response/' . $resourceType . '_' . $resultType . '.json');
 
-        $resultFactory = new \Ezypay\Result\ResultFactory(json_decode($jsonResponse, true),false, $resourceType);
+        $resultFactory = new \Ezypay\Result\ResultFactory(json_decode($jsonResponse, true), false, $resourceType);
         /**
          * @var $result result
          */
         $result = $resultFactory->run();
 
-      //  $this->assertInstanceOf('IResult', $result, 'Failed.Not implemets result interface');
+        //  $this->assertInstanceOf('IResult', $result, 'Failed.Not implemets result interface');
         $this->assertInstanceOf($implements, $result, 'Failed. Not implement custom interface.' . $implements);
         $this->assertTrue($result->isSuccess(), 'Failed. Is not success' . $resourceType . '-' . $resultType);
         $this->assertNotEmpty($result->data(), 'Failed. Data is empty ' . $resourceType . ' - ' . $resultType);
@@ -70,11 +70,11 @@ class ResultFactoryTest extends PHPUnit_Framework_TestCase
      * @param $resourceType string resource name from data provider
      * @param $resultType string result type from data provider
      */
-    public function testRunError($resourceType, $resultType,$implements)
+    public function testRunError($resourceType, $resultType, $implements)
     {
         $jsonResponse = file_get_contents('./mock/response/' . $resourceType . '_' . $resultType . '.json');
 
-        $resultFactory = new \Ezypay\Result\ResultFactory(false,json_decode($jsonResponse, true), $resourceType);
+        $resultFactory = new \Ezypay\Result\ResultFactory(false, json_decode($jsonResponse, true), $resourceType);
 
 
         /**
@@ -85,7 +85,7 @@ class ResultFactoryTest extends PHPUnit_Framework_TestCase
         $this->assertInstanceOf($implements, $result, 'Failed. Not implement custom interface.' . $implements);
         $this->assertFalse($result->isSuccess(), 'Failed. Is not success' . $resourceType . '-' . $resultType);
 
-        $this->assertEquals(json_decode($jsonResponse,true),$result->data()['data'],'Failed. Data is not same');
+        $this->assertEquals(json_decode($jsonResponse, true), $result->data()['data'], 'Failed. Data is not same');
 
 
     }
@@ -102,17 +102,18 @@ class ResultFactoryTest extends PHPUnit_Framework_TestCase
 
         $jsonResponse = file_get_contents('./mock/response/' . $resourceType . '_' . $resultType . '.json');
 
-        $resultFactory = new \Ezypay\Result\ResultFactoryJson(json_decode($jsonResponse, true),false, $resourceType);
+        $resultFactory = new \Ezypay\Result\ResultFactoryJson(json_decode($jsonResponse, true), false, $resourceType);
 
         /**
          * @var $result result
          */
         $result = $resultFactory->run();
 
-        $this->assertTrue($result->isSuccess(),'Failed. Result is not true');
-        $this->assertJsonStringEqualsJsonString($jsonResponse,$result->data() );
+        $this->assertTrue($result->isSuccess(), 'Failed. Result is not true');
+        $this->assertJsonStringEqualsJsonString($jsonResponse, $result->data());
 
     }
+
     /**
      * Test error result of ResultFactory
      *
@@ -123,8 +124,8 @@ class ResultFactoryTest extends PHPUnit_Framework_TestCase
     public function testRunErrorJson($resourceType, $resultType)
     {
         $jsonResponse = file_get_contents('./mock/response/' . $resourceType . '_' . $resultType . '.json');
-       
-        $resultFactory = new \Ezypay\Result\ResultFactoryJson(false,json_decode($jsonResponse, true), $resourceType);
+
+        $resultFactory = new \Ezypay\Result\ResultFactoryJson(false, json_decode($jsonResponse, true), $resourceType);
 
 
         /**
@@ -132,7 +133,34 @@ class ResultFactoryTest extends PHPUnit_Framework_TestCase
          */
         $result = $resultFactory->run();
 
-        $this->assertFalse($result->isSuccess(),'Faied. isSuccess is not false');
+        $this->assertFalse($result->isSuccess(), 'Faied. isSuccess is not false');
         $this->assertJsonStringEqualsJsonString($result->data(), $jsonResponse);
+    }
+
+    /**
+     * Test result success as array
+     *
+     * @dataProvider dataProviderSuccess
+     *
+     * @param $resourceType string resurce type
+     * @param $resultType sting result type
+     */
+    public function testRunSuccessArray($resourceType, $resultType, $implements)
+    {
+        $jsonResponse = file_get_contents('./mock/response/' . $resourceType . '_' . $resultType . '.json');
+        $responseArray = json_decode($jsonResponse, true);
+
+        $resultFactory = new \Ezypay\Result\ResultFactoryArray($responseArray, false, $resourceType);
+        /**
+         * @var $result \Ezypay\Contract\IResult
+         */
+        $result = $resultFactory->run();
+
+        $this->assertInstanceOf($implements, $result, 'Failed. Not implement custom interface.' . $implements);
+        $this->assertTrue($result->isSuccess(), 'Failed. Is not success' . $resourceType . '-' . $resultType);
+        $this->assertNotEmpty($result->data(), 'Failed. Data is empty ' . $resourceType . ' - ' . $resultType);
+        
+        $this->assertEquals($responseArray['data'],$result->data(),'Failed. Data is not same' );
+
     }
 }

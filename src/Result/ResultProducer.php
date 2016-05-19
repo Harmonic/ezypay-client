@@ -75,6 +75,10 @@ class ResultProducer
                 break;
             case 'json':
                 $result = new ResultFactoryJson($res, $err, $this->resourceType);
+                break;
+            case 'array':
+                $result = new ResultFactoryArray($res, $err, $this->resourceType);
+                break;
         }
 
         $this->validation->clear();
