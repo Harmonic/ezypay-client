@@ -1,5 +1,5 @@
 {
-    "name": "peroperje/ezypay-client",
+    "name": "harmonic/ezypay-client",
     "description": "PHP EzyPay API client",
     "type": "package",
     "license": "MIT",
@@ -7,10 +7,16 @@
         {
             "name": "peroperje",
             "email": "el.pionir@gmail.com"
+        },
+        {
+            "name": "craig",
+            "email": "craig@harmnic.com.au"
         }
     ],
     "minimum-stability": "dev",
-    "require": {},
+    "require": {
+        "php": "^7.0"
+    },
     "autoload": {
         "psr-4" : {
             "Ezypay\\" : "src/"

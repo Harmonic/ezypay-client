@@ -14,8 +14,7 @@ use Ezypay\Validation\Validator\NotEmptyString;
  * Class Customer
  * @package Ezypay\Resource
  */
-class Customer extends Resurce implements IResourceCustomer, IResourceCreate, IResourceUpdate
-{
+class Customer extends Resurce implements IResourceCustomer, IResourceCreate, IResourceUpdate {
     /**
      * @var string defautl object name
      */
@@ -26,9 +25,7 @@ class Customer extends Resurce implements IResourceCustomer, IResourceCreate, IR
      * @param IDriver $connector
      * @param ValidationBase $validation
      */
-    public function __construct(IDriver $connector, ValidationBase $validation)
-    {
-
+    public function __construct(IDriver $connector, ValidationBase $validation) {
         parent::__construct($connector, $validation, $this->resourceType);
     }
 
@@ -39,12 +36,11 @@ class Customer extends Resurce implements IResourceCustomer, IResourceCreate, IR
      * @param array $data EzyPay API parametes (see link)
      * @return ResultProducer
      */
-    public function findAll(array $data = array())
-    {
-        $this->settings(array(
+    public function findAll(array $data = []) {
+        $this->settings([
             'url' => !empty($data) ? 'customers?' . http_build_query($data) : 'customers',
             'method' => 'GET'
-        ));
+        ]);
 
         return $this->result();
     }
@@ -56,13 +52,11 @@ class Customer extends Resurce implements IResourceCustomer, IResourceCreate, IR
      * @param $id string EzyPay customer ID
      * @return ResultProducer
      */
-    public function findById($id)
-    {
-
-        $this->settings(array(
+    public function findById($id) {
+        $this->settings([
             'url' => 'customers/' . $id,
             'method' => 'GET'
-        ));
+        ]);
         return $this->result();
     }
 
@@ -73,12 +67,11 @@ class Customer extends Resurce implements IResourceCustomer, IResourceCreate, IR
      * @param $id string The reference ID of the customer. A unique identifier from a third-party software integration.
      * @return ResultProducer
      */
-    public function findByReferenceId($id)
-    {
-        $this->settings(array(
+    public function findByReferenceId($id) {
+        $this->settings([
             'url' => 'customers/reference/' . $id,
             'method' => 'GET'
-        ));
+        ]);
         return $this->result();
     }
 
@@ -89,16 +82,15 @@ class Customer extends Resurce implements IResourceCustomer, IResourceCreate, IR
      * @param array $data The customer data. Refer to request body schema (see link)
      * @return ResultProducer
      */
-    public function create(array $data)
-    {
-
-        $this->settings(array(
+    public function create(array $data) {
+        $this->settings([
             'url' => 'customers',
             'method' => 'POST',
             'data' => $data
-        ));
-        
-        $this->addValidator(new NotEmptyString($data['referenceId'],'referenceId is required' ));
+        ]);
+
+        // This causes referenceID validation to fail. Just get straight form Ezypay API.
+        //$this->addValidator(new NotEmptyString($data['referenceId'], 'referenceId is required'));
         return $this->result();
     }
 
@@ -110,15 +102,29 @@ class Customer extends Resurce implements IResourceCustomer, IResourceCreate, IR
      * @param array $data The customer data. Refer to request body schema (see link)
      * @return ResultProducer
      */
-    public function update($id, array $data)
-    {
-        $this->settings(array(
+    public function update($id, array $data) {
+        $this->settings([
             'url' => 'customers/' . $id,
             'method' => 'PUT',
             'data' => $data
-        ));
+        ]);
 
         return $this->result();
     }
 
+    /**
+     * Delete a customer
+     *
+     * @link https://demoapi.ezypay.com/help/docs#!/Customers/CustomersApi_GetCustomerById
+     * @param $id string EzyPay customer ID
+     * @return ResultProducer
+     */
+    public function delete($id) {
+        $this->settings([
+            'url' => 'customers/' . $id,
+            'method' => 'DELETE'
+        ]);
+
+        return $this->result();
+    }
 }
